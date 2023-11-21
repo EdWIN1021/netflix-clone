@@ -2,7 +2,7 @@ import AppSection from "./components/home/AppSection";
 import BannerSection from "./components/home/BannerSection";
 import TVSection from "./components/home/TVSection";
 import KidSection from "./components/home/KidSection";
-import Footer from "./components/home/Footer";
+import Footer from "./components/Footer";
 import QuestionSection from "./components/home/QuestionSection";
 import { homeFooterLinks } from "./constants";
 import DevicesSection from "./components/home/DevicesSection";

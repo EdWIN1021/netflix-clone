@@ -62,3 +62,12 @@ export const questions = [
     toggle: false,
   },
 ];
+
+export const loginFooterLinks = [
+  "FAQ",
+  "Help Center",
+  "Terms of Use",
+  "Privacy",
+  "Cookie Preferences",
+  "Corporate Information",
+];

@@ -8,7 +8,7 @@ const BannerSection = () => {
     <section
       className="w-full bg-cover"
       style={{
-        backgroundImage: `url('/home/bg.jpg')`,
+        backgroundImage: `url('/bg.jpg')`,
       }}
     >
       <Overlay>

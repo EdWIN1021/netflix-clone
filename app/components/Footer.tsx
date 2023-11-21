@@ -1,8 +1,8 @@
-import DropDown from "../DropDown";
+import DropDown from "./DropDown";
 
 const Footer = ({ links, type }: { links: string[]; type?: string }) => {
   return (
-    <div className="mt-2 bg-black py-3  text-left text-[#fff]">
+    <div className=" mt-2 bg-black py-3  text-left text-[#fff]">
       <div
         className={`my-3 px-8 ${
           type === "small" ? "xl:w-[1000px]" : "xl:w-[80%]"
