@@ -1,3 +1,22 @@
+import AppSection from "./components/home/AppSection";
+import BannerSection from "./components/home/BannerSection";
+import TVSection from "./components/home/TVSection";
+import KidSection from "./components/home/KidSection";
+import Footer from "./components/home/Footer";
+import QuestionSection from "./components/home/QuestionSection";
+import { homeFooterLinks } from "./constants";
+import DevicesSection from "./components/home/DevicesSection";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <BannerSection />
+      <TVSection />
+      <DevicesSection />
+      <KidSection />
+      <AppSection />
+      <QuestionSection />
+      <Footer links={homeFooterLinks} />
+    </main>
+  );
 }

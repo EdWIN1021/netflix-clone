@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  font-size: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .btn-primary {
+    @apply whitespace-nowrap rounded bg-[rgb(229,9,20)] text-white hover:bg-[rgb(193,17,25)] active:bg-[rgb(153,22,29)];
+  }
+
+  .text-input {
+    @apply w-full rounded px-4 pb-1 pt-6 leading-normal outline-none sm:pt-7;
+  }
+
+  .input-primary {
+    @apply text-input border border-solid border-[rgb(128,128,128)] bg-[rgba(21,21,21,0.75)] outline focus:outline-[0.125rem] focus:outline-white/100;
+  }
+
+  .input-secondary {
+    @apply text-input bg-[#333] focus:bg-[#454545];
+  }
+
+  .label-primary {
+    @apply absolute left-[5%] top-1/2 translate-y-[-50%] duration-300 peer-focus:left-[4%] peer-focus:top-[30%] peer-focus:text-xs;
+  }
+
+  .label-secondary {
+    @apply label-primary text-[#8C8C8C];
+  }
+  .icon-button {
+    @apply flex items-center gap-4 whitespace-nowrap rounded px-[1rem] py-[0.2rem];
+  }
+}
