@@ -9,7 +9,7 @@ const LoginModal = () => {
       <TextInput label={"Email or phone number"} />
       <TextInput label={"Password"} />
 
-      <button className="btn-primary mt-10 w-full py-3">Sign In</button>
+      <button className="primary-btn mt-10 w-full py-3">Sign In</button>
 
       <div className="mt-4 flex text-[13px] text-[#b3b3b3]">
         <div className="flex-1 ">

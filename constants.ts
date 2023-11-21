@@ -71,3 +71,14 @@ export const loginFooterLinks = [
   "Cookie Preferences",
   "Corporate Information",
 ];
+
+export const signUpFooterLinks = [
+  "FAQ",
+  "Help Center",
+  "Netflix Shop",
+  "Terms of Use",
+  "Privacy",
+  "Cookie Preferences",
+  "Corporate Information",
+  "Ad Choices",
+];

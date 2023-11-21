@@ -1,8 +1,21 @@
 import DropDown from "./DropDown";
 
-const Footer = ({ links, type }: { links: string[]; type?: string }) => {
+const Footer = ({
+  links,
+  type,
+  bgColor = "#000",
+  fontColor = "#fff",
+}: {
+  links: string[];
+  type?: string;
+  bgColor?: string;
+  fontColor?: string;
+}) => {
   return (
-    <div className=" mt-2 bg-black py-3  text-left text-[#fff]">
+    <div
+      className=" mt-2 py-3 text-left"
+      style={{ backgroundColor: bgColor, color: fontColor }}
+    >
       <div
         className={`my-3 px-8 ${
           type === "small" ? "xl:w-[1000px]" : "xl:w-[80%]"

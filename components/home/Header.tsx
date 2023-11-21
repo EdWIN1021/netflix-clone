@@ -22,7 +22,7 @@ const Header = () => {
       <DropDown />
 
       <button
-        className="btn-primary px-4 py-1 text-sm font-medium"
+        className="primary-btn px-4 py-1 text-sm font-medium"
         onClick={() => router.push("/login")}
       >
         Sign In

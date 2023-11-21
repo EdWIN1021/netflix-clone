@@ -19,7 +19,7 @@ body {
 }
 
 @layer components {
-  .btn-primary {
+  .primary-btn {
     @apply whitespace-nowrap rounded bg-[rgb(229,9,20)] text-white hover:bg-[rgb(193,17,25)] active:bg-[rgb(153,22,29)];
   }
 
@@ -44,5 +44,12 @@ body {
   }
   .icon-button {
     @apply flex items-center gap-4 whitespace-nowrap rounded px-[1rem] py-[0.2rem];
+  }
+
+  .center-x-y {
+    @apply flex flex-col items-center justify-center;
+  }
+  .secondary-TERTIARY {
+    /* @apply  */
   }
 }
