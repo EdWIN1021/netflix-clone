@@ -1,4 +1,5 @@
 import TextInput from "../TextInput";
+import Link from "next/link";
 
 const LoginModal = () => {
   return (
@@ -27,9 +28,9 @@ const LoginModal = () => {
       <div className="mt-20 text-[#737373]">
         <div className="text-[16px]">
           New to Netflix?{" "}
-          <a className="text-white hover:underline" href="">
+          <Link className="text-white hover:underline" href="/">
             Sign up now.
-          </a>
+          </Link>
         </div>
 
         <p className="my-[13px] text-[13px]">
