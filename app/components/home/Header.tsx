@@ -15,10 +15,11 @@ const Header = () => {
           alt=""
           width={148}
           height={40}
+          priority
         />
       </Link>
 
-      <DropDown/>
+      <DropDown />
 
       <button
         className="btn-primary px-4 py-1 text-sm font-medium"

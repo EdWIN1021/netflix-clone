@@ -23,6 +23,7 @@ const page = () => {
               alt=""
               width={148}
               height={40}
+              priority
             />
           </Link>
 
