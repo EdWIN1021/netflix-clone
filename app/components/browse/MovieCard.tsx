@@ -28,7 +28,7 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
     <div className="group min-w-[15.5%] cursor-pointer rounded">
       <div className="relative rounded group-hover:opacity-0">
         {isLoading ? (
-          <Skeleton height={110} baseColor="#b3b3b3" />
+          <Skeleton style={{ height: "8.2vw" }} baseColor="#b3b3b3" />
         ) : (
           <>
             <Image
@@ -37,7 +37,7 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
               alt=""
               onMouseOver={handleMouseOver}
               width={150}
-              height={150}
+              height={10}
             />
             {data?.images?.logos[0]?.file_path && (
               <Image
