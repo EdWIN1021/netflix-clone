@@ -1,5 +1,5 @@
-import Banner from "../components/browse/Banner";
-import Row from "../components/browse/Row";
+import Banner from "../../components/browse/Banner";
+import Row from "../../components/browse/Row";
 import Image from "next/image";
 
 import {
@@ -10,7 +10,7 @@ import {
   getTopRatedSeries,
   getTopRatedMovies,
   getNowPlaying,
-} from "../requests/server";
+} from "../../requests/server";
 import Link from "next/link";
 
 const page = async () => {

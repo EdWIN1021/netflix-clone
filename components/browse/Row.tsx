@@ -1,5 +1,5 @@
-import MovieCard from "../browse/MovieCard";
-import { Movie } from "../../types";
+import MovieCard from "./MovieCard";
+import { Movie } from "../../app/types";
 
 const Row = ({
   title,

@@ -1,4 +1,4 @@
-import Header from "../components/browse/Header";
+import Header from "../../components/browse/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

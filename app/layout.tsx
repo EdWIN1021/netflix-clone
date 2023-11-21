@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import QueryProvider from "./providers/QueryProvider";
+import QueryProvider from "../providers/QueryProvider";
 import "./globals.css";
 
 const nunito = Nunito({

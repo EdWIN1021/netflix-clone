@@ -1,8 +1,8 @@
-import LoginModal from "../components/login/LoginModal";
-import Overlay from "../components/Overlay";
-import Footer from "../components/Footer";
+import LoginModal from "../../components/login/LoginModal";
+import Overlay from "../../components/Overlay";
+import Footer from "../../components/Footer";
 import Link from "next/link";
-import { loginFooterLinks as links } from "../constants";
+import { loginFooterLinks as links } from "../../constants";
 
 import Image from "next/image";
 
