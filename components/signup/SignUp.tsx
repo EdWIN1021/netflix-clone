@@ -1,16 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TextInput from "../TextInput";
 import { useRouter } from "next/navigation";
 
 const SignUp = () => {
   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+
     router.push("/signup/created");
   };
+
+  useEffect(() => {
+    setEmail(localStorage.getItem("email") || "");
+  }, []);
 
   return (
     <form className="mx-auto my-10 max-w-[440px] p-2" onSubmit={handleSubmit}>
@@ -26,10 +33,26 @@ const SignUp = () => {
 
         <div className="mb-5 mt-4">
           <div className="mb-3">
-            <TextInput label="Email" id="email" variant="tertiary" />
+            <TextInput
+              label="Email"
+              id="email"
+              variant="tertiary"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              required
+            />
           </div>
 
-          <TextInput label="Add a password" id="password" variant="tertiary" />
+          <TextInput
+            label="Add a password"
+            id="password"
+            variant="tertiary"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            required
+          />
         </div>
 
         <button

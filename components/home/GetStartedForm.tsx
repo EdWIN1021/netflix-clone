@@ -3,14 +3,22 @@
 import { useRouter } from "next/navigation";
 import TextInput from "../TextInput";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
 const GetStartedForm = () => {
   const router = useRouter();
 
+  const [inputField, setInputField] = useState("");
+
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    localStorage.setItem("email", inputField);
     router.push("/signup");
   };
+
+  useEffect(() => {
+    setInputField(localStorage.getItem("email") || "");
+  }, []);
 
   return (
     <form
@@ -23,7 +31,15 @@ const GetStartedForm = () => {
 
       <div className="flex flex-col items-center sm:flex-row">
         <div className="mr-2 w-full">
-          <TextInput label={"Email address"} id="email" variant="primary" />
+          <TextInput
+            label={"Email address"}
+            id="email"
+            variant="primary"
+            value={inputField}
+            onChange={(e) => setInputField(e.target.value)}
+            type="email"
+            required
+          />
         </div>
 
         <button

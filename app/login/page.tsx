@@ -21,10 +21,11 @@ const page = () => {
             <Image
               className="h-full w-[9.25rem] flex-1"
               src="/logo.svg"
-              alt=""
-              width={148}
-              height={40}
-              priority
+              alt="logo"
+              width="0"
+              height="0"
+              sizes="100vw"
+              // priority
             />
           </Link>
 
