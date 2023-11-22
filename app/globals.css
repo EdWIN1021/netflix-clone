@@ -49,7 +49,4 @@ body {
   .center-x-y {
     @apply flex flex-col items-center justify-center;
   }
-  .secondary-TERTIARY {
-    /* @apply  */
-  }
 }

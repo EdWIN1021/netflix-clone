@@ -6,8 +6,22 @@ const LoginModal = () => {
     <div className="mx-auto h-full rounded bg-black px-[5%] py-[60px] pt-[40px] text-white sm:h-[660px] sm:w-[450px] sm:bg-[rgba(0,0,0,0.75)] sm:px-[68px]">
       <h1 className="text-[2rem] font-medium">Sign In</h1>
 
-      <TextInput label={"Email or phone number"} />
-      <TextInput label={"Password"} />
+      <div className="mt-4">
+        <TextInput
+          label={"Email or phone number"}
+          variant="secondary"
+          type="text"
+          id="email"
+        />
+      </div>
+      <div className="mt-4">
+        <TextInput
+          label={"Password"}
+          variant="secondary"
+          type="password"
+          id="password"
+        />
+      </div>
 
       <button className="primary-btn mt-10 w-full py-3">Sign In</button>
 

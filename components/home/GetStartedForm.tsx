@@ -21,13 +21,14 @@ const GetStartedForm = () => {
         Ready to watch? Enter your email to create or restart your membership.
       </h3>
 
-      <div className="justify-center sm:flex">
+      <div className="flex flex-col items-center sm:flex-row">
         <div className="mr-2 w-full">
-          <TextInput label={"Email address"} primary />
+          <TextInput label={"Email address"} id="email" variant="primary" />
         </div>
+
         <button
           type="submit"
-          className="mt-4 whitespace-nowrap rounded bg-[rgb(229,9,20)]  px-4 py-2 text-lg font-medium text-[#fff] hover:bg-[rgb(193,17,25)] active:bg-[rgb(153,22,29)]"
+          className="mt-3 whitespace-nowrap rounded bg-[rgb(229,9,20)] px-4  py-3.5 text-lg font-medium text-[#fff] hover:bg-[rgb(193,17,25)] active:bg-[rgb(153,22,29)] sm:mt-0"
         >
           <div className="flex items-center">
             <span>Get Started</span>
