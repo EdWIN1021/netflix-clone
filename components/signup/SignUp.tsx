@@ -13,7 +13,7 @@ const SignUp = () => {
   };
 
   return (
-    <form className="mx-auto mt-10 max-w-[440px]" onSubmit={handleSubmit}>
+    <form className="mx-auto my-10 max-w-[440px] p-2" onSubmit={handleSubmit}>
       <div>
         <h2 className="text-[32px] font-medium">
           Create a password to start your membership

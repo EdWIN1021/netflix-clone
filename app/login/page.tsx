@@ -5,6 +5,7 @@ import Link from "next/link";
 import { loginFooterLinks as links } from "../../constants";
 
 import Image from "next/image";
+import DropDown from "@/components/DropDown";
 
 const page = () => {
   return (
@@ -31,9 +32,12 @@ const page = () => {
             <LoginModal />
           </div>
 
-          <div className="w-full border-t-2 border-[rgb(35,35,35,35)] sm:border-0 sm:opacity-50">
-            <Footer links={links} type={"small"} />
-          </div>
+          <Footer
+            links={links}
+            variant="transparent"
+            showName={false}
+            dropDown={<DropDown />}
+          />
         </div>
       </Overlay>
     </div>

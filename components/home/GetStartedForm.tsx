@@ -17,7 +17,7 @@ const GetStartedForm = () => {
       className="mt-6 px-6 text-center text-[#fff] sm:mx-auto sm:max-w-3xl"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-lg font-normal lg:text-xl">
+      <h3 className="mb-8 text-lg font-normal lg:text-xl">
         Ready to watch? Enter your email to create or restart your membership.
       </h3>
 

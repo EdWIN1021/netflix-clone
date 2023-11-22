@@ -1,12 +1,11 @@
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import React from "react";
-import { signUpFooterLinks as links } from "../../../constants";
 
 const page = () => {
   return (
     <div className="flex flex-col">
-      <div className="mt-10 flex h-full flex-1 justify-center">
+      <div className="mt-10 flex justify-center">
         <div className="flex w-[440px] flex-col">
           <h2 className="mb-3 text-[32px] font-medium">Account Created</h2>
           <p className=" text-[16px]">Use this email to access your account:</p>
@@ -22,7 +21,6 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <Footer links={links} />
     </div>
   );
 };

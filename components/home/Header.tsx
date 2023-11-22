@@ -19,7 +19,7 @@ const Header = () => {
         />
       </Link>
 
-      <DropDown />
+      <DropDown variant="transparent" />
 
       <button
         className="primary-btn px-4 py-1 text-sm font-medium"

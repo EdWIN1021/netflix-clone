@@ -1,10 +1,13 @@
 import Logo from "@/components/Logo";
 import Link from "next/link";
+import { signUpFooterLinks as links } from "../../constants";
+import Footer from "@/components/Footer";
+import DropDown from "@/components/DropDown";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-[100vh] bg-white">
-      <div className="flex w-full items-center border-b px-7 py-4 ">
+    <div className="flex min-h-[100vh] flex-col bg-white">
+      <div className="flex w-full items-center border-b px-7 py-2">
         <div className="flex-1">
           <Logo width={167} height={65} />
         </div>
@@ -14,7 +17,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Link>
       </div>
 
-      <>{children}</>
+      <div className="flex-1">{children}</div>
+
+      <Footer
+        links={links}
+        variant="light"
+        showName={false}
+        dropDown={<DropDown />}
+      />
     </div>
   );
 }

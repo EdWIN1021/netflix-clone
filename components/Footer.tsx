@@ -1,27 +1,34 @@
-import DropDown from "./DropDown";
+import Link from "next/link";
 
 const Footer = ({
   links,
-  type,
-  bgColor = "#000",
-  fontColor = "#fff",
+  variant,
+  showName = true,
+  dropDown,
 }: {
   links: string[];
-  type?: string;
-  bgColor?: string;
-  fontColor?: string;
+  variant: "dark" | "light" | "transparent";
+  showName?: boolean;
+  dropDown: React.ReactNode;
 }) => {
+  const bgVariants = {
+    light: "bg-[rgb(243,243,243)]",
+    dark: "bg-black",
+    transparent: "bg-[rgba(0,0,0,0.75)]",
+  };
+
+  const colorVariants = {
+    light: "text-[#737373]",
+    dark: "text-[rgba(255,255,255,0.7)]",
+    transparent: "text-[#737373]",
+  };
+
   return (
     <div
-      className=" mt-2 py-3 text-left"
-      style={{ backgroundColor: bgColor, color: fontColor }}
+      className={`${bgVariants[variant]} ${colorVariants[variant]} mt-2 px-8 py-10 text-left md:px-[200px]`}
     >
-      <div
-        className={`my-3 px-8 ${
-          type === "small" ? "xl:w-[1000px]" : "xl:w-[80%]"
-        }  lg:mx-auto`}
-      >
-        <div className="py-3">
+      <div className={`lg:mx-auto xl:w-[1000px]`}>
+        <div className="py-2">
           <a className="opacity-70" href="">
             Questions? Contact us.
           </a>
@@ -30,23 +37,18 @@ const Footer = ({
         <ul className="grid grid-cols-1 gap-3 py-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {links?.map((link) => (
             <li key={link}>
-              <a
-                className={`${
-                  type === "small" ? "text-[13px]" : "text-sm"
-                } underline" opacity-70`}
+              <Link
+                className={`text-[13px] opacity-70 hover:underline`}
                 href=""
               >
                 {link}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
+        {dropDown && <div className="pb-3 pt-5">{dropDown}</div>}
 
-        <div className="pb-3 pt-5">
-          <DropDown />
-        </div>
-
-        {!type && <p className="py-3 text-sm opacity-70">Netflix Canada</p>}
+        {showName && <p className="py-3 text-sm opacity-70">Netflix Canada</p>}
       </div>
     </div>
   );
