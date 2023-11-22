@@ -4,15 +4,27 @@ import React, { useEffect, useRef, useState } from "react";
 import TextInput from "../TextInput";
 import { useRouter } from "next/navigation";
 
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import type { Database } from '../../database.types'
+
 const SignUp = () => {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const supabase = createClientComponentClient<Database>()
+  const router = useRouter();
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    router.push("/signup/created");
+    await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${location.origin}/auth/callback`,
+      },
+    })
+
+    // router.push("/signup/created");
   };
 
   useEffect(() => {
