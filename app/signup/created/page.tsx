@@ -1,8 +1,9 @@
-import Footer from "@/components/Footer";
+"use client";
+
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="flex flex-col">
       <div className="mt-10 flex justify-center">
@@ -25,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
