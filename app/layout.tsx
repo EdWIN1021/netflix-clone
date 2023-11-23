@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import QueryProvider from "../providers/QueryProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 
@@ -21,11 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <AuthProvider>
-        <QueryProvider>
-          <body className={nunito.className}>{children}</body>
-        </QueryProvider>
-      </AuthProvider>
+      <body className={nunito.className}>
+        <Toaster />
+        <AuthProvider>
+          <QueryProvider>{children}</QueryProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

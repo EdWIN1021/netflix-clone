@@ -11,9 +11,14 @@ import React, {
   FC,
   useState,
   useEffect,
-  useContext,
 } from "react";
 import { useRouter } from "next/navigation";
+
+import toast from "react-hot-toast";
+
+interface CustomError extends Error {
+  message: string;
+}
 
 interface AuthContextProps {
   signUp: (email: string, password: string) => void;
@@ -38,14 +43,21 @@ const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        setCurrentUser(session?.user);
+        if (event === "SIGNED_IN") {
+          setCurrentUser(session?.user);
+          router.push("/browse");
+        }
+
+        if (event === "SIGNED_OUT") {
+          router.push("/");
+        }
       },
     );
 
     return () => {
       authListener.subscription;
     };
-  }, []);
+  }, [router]);
 
   const signUp = async (email: string, password: string) => {
     try {
@@ -57,10 +69,15 @@ const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
         password,
       });
 
-      if (user && !error) router.push("/signup/created");
-      if (error) throw new Error(error?.message);
+      if (user && !error) {
+        toast.success("Congratulations! You have successfully signed up.");
+      }
+      if (error) {
+        throw new Error(error?.message);
+      }
     } catch (err) {
-      console.log(err);
+      const message = (err as CustomError).message;
+      toast.error(message);
     }
   };
 
@@ -74,16 +91,18 @@ const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
         password,
       });
 
-      if (user && !error) router.push("/browse");
+      if (user && !error) {
+        toast.success("Welcome! You have successfully logged in.");
+      }
       if (error) throw new Error(error?.message);
     } catch (err) {
-      console.log(err);
+      const message = (err as CustomError).message;
+      toast.error(message);
     }
   };
 
   const signOut = async () => {
     await supabase.auth.signOut();
-    router.push("/");
   };
 
   const contextValue: AuthContextProps = {

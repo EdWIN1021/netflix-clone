@@ -59,7 +59,7 @@ const Header = () => {
                   "font-bold": pathname === link.path,
                 },
               )}
-              href={link.path}
+              href={"/"}
             >
               {link.title}
             </Link>

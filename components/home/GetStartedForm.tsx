@@ -12,12 +12,12 @@ const GetStartedForm = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    localStorage.setItem("email", inputField);
+    sessionStorage.setItem("email", inputField);
     router.push("/signup");
   };
 
   useEffect(() => {
-    setInputField(localStorage.getItem("email") || "");
+    setInputField(sessionStorage.getItem("email") || "");
   }, []);
 
   return (

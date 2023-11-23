@@ -15,12 +15,10 @@ const SignUpForm = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     signUp(email, password);
-
-    // router.push("/signup/created");
   };
 
   useEffect(() => {
-    setEmail(localStorage.getItem("email") || "");
+    setEmail(sessionStorage.getItem("email") || "");
   }, []);
 
   return (
@@ -63,7 +61,7 @@ const SignUpForm = () => {
           type="submit"
           className="primary-btn mt-6 w-full px-12 py-5 text-2xl text-white"
         >
-          Next
+          Sign Up
         </button>
       </div>
     </form>
