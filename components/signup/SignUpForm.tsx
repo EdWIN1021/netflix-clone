@@ -1,28 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import TextInput from "../TextInput";
 import { useRouter } from "next/navigation";
+import { AuthContext } from "@/providers/AuthProvider";
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import type { Database } from '../../database.types'
-
-const SignUp = () => {
+const SignUpForm = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const supabase = createClientComponentClient<Database>()
-  const router = useRouter();
 
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+  const { signUp } = useContext(AuthContext);
+
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
-    })
+    signUp(email, password);
 
     // router.push("/signup/created");
   };
@@ -78,4 +70,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm;

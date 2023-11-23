@@ -1,29 +1,23 @@
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
-import { NextResponse } from 'next/server'
+import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
+import { NextResponse } from "next/server";
 
-import type { NextRequest } from 'next/server'
-import type { Database } from './database.types'
-
-
+import type { NextRequest } from "next/server";
+import type { Database } from "./database.types";
 
 export async function middleware(req: NextRequest) {
-  const res = NextResponse.next()
-  const supabase = createMiddlewareClient<Database>({ req, res })
+  const res = NextResponse.next();
+  const supabase = createMiddlewareClient<Database>({ req, res });
   const {
     data: { user },
-  } = await supabase.auth.getUser()
-
-
-  console.log(user)
+  } = await supabase.auth.getUser();
 
   if (user) {
-    return NextResponse.redirect(new URL('/browse', req.url))
+    return NextResponse.redirect(new URL("/browse", req.url));
   }
 
-  return res
+  return res;
 }
-
 
 export const config = {
-  matcher: ['/', '/signup/:path*', '/login/:path*'],
-}
+  matcher: ["/", "/signup/:path*", "/login/:path*"],
+};

@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+
+import { AuthContext } from "@/providers/AuthProvider";
 
 const links = [
   { id: 1, title: "Home", path: "/browse" },
@@ -19,6 +21,7 @@ const links = [
 const Header = () => {
   const [bg, setBg] = useState(false);
   const pathname = usePathname();
+  const { signOut } = useContext(AuthContext);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -75,6 +78,8 @@ const Header = () => {
           alt=""
         />
       </div>
+
+      <button onClick={() => signOut()}>Sign Out</button>
     </div>
   );
 };
