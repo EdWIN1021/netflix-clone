@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Toaster />
+        {/* <Toaster /> */}
         <AuthProvider>
           <QueryProvider>{children}</QueryProvider>
         </AuthProvider>

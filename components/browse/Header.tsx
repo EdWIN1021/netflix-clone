@@ -3,11 +3,17 @@
 import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import {
+  BellIcon,
+  MagnifyingGlassIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
+
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import { AuthContext } from "@/providers/AuthProvider";
+import Menu from "../Menu";
 
 const links = [
   { id: 1, title: "Home", path: "/browse" },
@@ -19,27 +25,12 @@ const links = [
 ];
 
 const Header = () => {
-  const [bg, setBg] = useState(false);
   const pathname = usePathname();
+  const [open, toggle] = useState(false);
   const { signOut } = useContext(AuthContext);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setBg(true);
-    } else {
-      setBg(false);
-    }
-  };
-
   return (
-    <div
-      className="fixed z-[100] flex h-[68px] w-[100vw] items-center bg-transparent px-[4%] text-sm text-white"
-      style={{ backgroundColor: bg ? "rgb(20,20,20)" : "transparent" }}
-    >
+    <div className="sticky top-0 flex items-center py-4 text-sm">
       <Image
         className="cursor-pointer"
         src="/logo.svg"
@@ -49,7 +40,7 @@ const Header = () => {
         priority
       />
 
-      <ul className="ml-12 flex flex-1 gap-5 font-normal">
+      <ul className="ml-12 flex flex-1 gap-5">
         {links.map((link) => (
           <li key={link.id}>
             <Link
@@ -67,19 +58,26 @@ const Header = () => {
         ))}
       </ul>
 
-      <div className="flex items-center gap-6 p-8">
-        <MagnifyingGlassIcon className="h-6 w-6 cursor-pointer" />
-        <BellIcon className="h-6 w-6 cursor-pointer" />
-        <Image
-          className="cursor-pointer rounded"
-          src="/browse/avatar.png"
-          width={32}
-          height={32}
-          alt=""
-        />
-      </div>
+      <div className="flex items-center gap-5">
+        <MagnifyingGlassIcon className="w-5 cursor-pointer" />
+        <BellIcon className="w-5 cursor-pointer" />
 
-      <button onClick={() => signOut()}>Sign Out</button>
+        <div
+          className="group relative flex cursor-pointer"
+          onMouseEnter={() => toggle(true)}
+          onMouseLeave={() => toggle(false)}
+        >
+          <Image
+            className="rounded"
+            src="/browse/avatar.png"
+            width={32}
+            height={40}
+            alt="avatar"
+          />
+          <ChevronUpIcon className="ml-2 w-5 duration-500 group-hover:rotate-180" />
+          {open && <Menu toggle={toggle} />}
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,9 +2,9 @@ import Header from "../../components/browse/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="bg-black px-[4%]">
       <Header />
-      <div>{children}</div>
+      {/* <div>{children}</div> */}
     </div>
   );
 }

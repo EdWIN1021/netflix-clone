@@ -12,7 +12,12 @@ html {
 
 body {
   background-color: rgb(20, 20, 20);
-  font-size: #fff;
+  color: #fff;
+}
+
+a,
+span {
+  white-space: nowrap;
 }
 
 ::-webkit-scrollbar {
