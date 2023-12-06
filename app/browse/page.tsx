@@ -70,24 +70,28 @@ const page = async () => {
       <div className=" mx-auto max-w-[980px] px-10 pb-[14px] pt-20 text-[13px] leading-4 text-[rgb(128,128,128)]">
         <div className="mb-4 flex gap-8">
           <Image
+            className="h-8 w-8"
             src="/browse/facebook.svg"
             alt="facebook..."
             width={35}
             height={35}
           />
           <Image
+            className="h-8 w-8"
             src="/browse/instagram.svg"
             alt="instagram..."
             width={25}
             height={25}
           />
           <Image
+            className="h-8 w-8"
             src="/browse/twitter.svg"
             alt="twitter..."
             width={25}
             height={25}
           />
           <Image
+            className="h-8 w-8"
             src="/browse/youtube.svg"
             alt="youtube..."
             width={25}

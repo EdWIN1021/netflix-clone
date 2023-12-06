@@ -77,7 +77,12 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
           </div>
 
           <p className="mb-2 text-[1vw]">
-            &quot;{data?.title || data?.original_name}&quot;
+            &quot;
+            {data?.title ||
+              data?.original_name ||
+              data?.original_title ||
+              data?.name}
+            &quot;
           </p>
           <ul>
             {data?.genres.map((genre: { id: number; name: string }) => (
