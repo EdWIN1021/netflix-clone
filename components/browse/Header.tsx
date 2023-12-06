@@ -71,10 +71,10 @@ const Header = () => {
           onMouseLeave={() => toggle(false)}
         >
           <Image
-            className="h-10 w-8 rounded "
+            className="h-8 w-8 rounded "
             src="/browse/avatar.png"
             width={32}
-            height={40}
+            height={32}
             alt="avatar"
           />
           <ChevronUpIcon className="ml-2 w-5 duration-500 group-hover:rotate-180" />
