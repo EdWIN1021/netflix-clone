@@ -11,8 +11,6 @@ import {
 
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-
-import { AuthContext } from "@/providers/AuthProvider";
 import Menu from "../Menu";
 
 const links = [
@@ -27,10 +25,9 @@ const links = [
 const Header = () => {
   const pathname = usePathname();
   const [open, toggle] = useState(false);
-  const { signOut } = useContext(AuthContext);
 
   return (
-    <div className="sticky top-0 flex items-center py-4 text-sm">
+    <div className="sticky top-0 z-50 flex items-center bg-black px-[4%] py-4 text-sm">
       <Image
         className="cursor-pointer"
         src="/logo.svg"

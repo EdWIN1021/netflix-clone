@@ -9,13 +9,11 @@ module.exports = {
     extend: {
       colors: {
         black: "rgb(20,20,20)",
-        
       },
-      //
 
       animation: {
         fade: "fade 2s forwards",
-        scale_card: "scale_card 2s forwards",
+        scale_card: "scale_card 1s forwards",
       },
       keyframes: {
         fade: {

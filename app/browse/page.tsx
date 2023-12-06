@@ -36,7 +36,7 @@ const page = async () => {
     <div>
       <Banner />
 
-      {/* <div className="pl-[4%]">
+      <div className="pl-[4%]">
         <Row title={"Trending Now"} movies={trending?.results} type="movie" />
         <Row
           title={"Upcoming Movies"}
@@ -65,9 +65,9 @@ const page = async () => {
           movies={topRatedSeries?.results}
           type="tv"
         />
-      </div> */}
+      </div>
 
-      {/* <div className=" mx-auto mb-[14px] max-w-[980px] px-10 pt-20 text-[13px] leading-4 text-[rgb(128,128,128)]">
+      <div className=" mx-auto max-w-[980px] px-10 pb-[14px] pt-20 text-[13px] leading-4 text-[rgb(128,128,128)]">
         <div className="mb-4 flex gap-8">
           <Image
             src="/browse/facebook.svg"
@@ -164,7 +164,7 @@ const page = async () => {
         <div>
           <span className="text-[11px]">© 1997-2023 Netflix, Inc.</span>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

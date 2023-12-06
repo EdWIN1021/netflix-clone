@@ -25,8 +25,8 @@ const Banner = () => {
   return (
     <>
       {!isMoviesLoading && (
-        <section className="relative mt-[68px] h-[40vw]">
-          <div className="absolute -z-20 h-[50vw] w-[100%]">
+        <section className="relative h-[40vw]">
+          <div className="absolute z-10 h-full w-full">
             <ReactPlayer
               url={`https://www.youtube.com/embed/${videos?.results[0]?.key}?autoplay=1&mute=1&controls=0&cc_load_policy=0&rel=0`}
               height={"100%"}
@@ -38,7 +38,7 @@ const Banner = () => {
           </div>
 
           <Image
-            className="absolute top-0 -z-20 h-[50vw] w-full animate-fade"
+            className="h-full w-full animate-fade"
             src={`https://image.tmdb.org/t/p/original/${
               movie?.backdrop_path || movie?.poster_path
             }`}
