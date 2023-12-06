@@ -6,13 +6,16 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    // screens: {
+    //   desktop: "720px",
+    // },
     extend: {
       colors: {
-        black: "rgb(20,20,20)",
+        md: "rgb(20,20,20)",
       },
 
       animation: {
-        fade: "fade 2s forwards",
+        fade: "fade 2.5s forwards",
         scale_card: "scale_card 1s forwards",
       },
       keyframes: {

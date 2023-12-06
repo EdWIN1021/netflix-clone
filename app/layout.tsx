@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import QueryProvider from "../providers/QueryProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Toaster } from "react-hot-toast";
 
 import "./globals.css";

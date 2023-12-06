@@ -94,7 +94,8 @@ const page = async () => {
             height={25}
           />
         </div>
-        <div className="grid grid-flow-col">
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           <nav>
             <ul>
               <li className="mb-4">

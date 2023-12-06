@@ -7,13 +7,12 @@ import {
   PlusIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { PlayIcon } from "@heroicons/react/24/solid";
+import { IoMdPlay } from "react-icons/io";
 import { Movie } from "@/app/types";
 import { MouseEvent, useState } from "react";
 import Image from "next/image";
 
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
   const [leftPosition, setLeftPosition] = useState<number>();
@@ -53,7 +52,7 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
       </div>
 
       <div
-        className="group-hover:animate-scale_card z-50 hidden shadow-2xl group-hover:absolute group-hover:inline-block group-hover:w-[15%]"
+        className="z-50 hidden shadow-2xl group-hover:absolute group-hover:inline-block group-hover:w-[15%] group-hover:animate-scale_card"
         style={{ left: leftPosition }}
       >
         <Image
@@ -65,13 +64,16 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
         />
         <div className="rounded-b bg-[rgb(20,20,20)] p-3">
           <div className="mb-6 flex">
-            <div className="flex flex-1 gap-1">
-              <PlusIcon className=" h-[2vw] w-[2vw] rounded-full border p-1" />
-              <PlayIcon className=" h-[2vw] w-[2vw] rounded-full  bg-white fill-[black] p-1" />
-              <HandThumbUpIcon className="h-[2vw] w-[2vw] rounded-full border p-1" />
+            <div className="flex flex-1 gap-[.3vw]">
+              <PlusIcon className="w-[2.5vw] rounded-full border p-1" />
+
+              <div className="h-[2.5vw] w-[2.5vw] ">
+                <IoMdPlay className="h-full w-full rounded-full bg-white  fill-black pl-[0.3vw]" />
+              </div>
+              <HandThumbUpIcon className="w-[2.5vw] rounded-full border p-1" />
             </div>
 
-            <ChevronDownIcon className="h-[2vw] w-[2vw] rounded-full border p-1" />
+            <ChevronDownIcon className="w-[2.5vw] rounded-full border p-1" />
           </div>
 
           <p className="mb-2 text-[1vw]">

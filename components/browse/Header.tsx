@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState, useContext } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   BellIcon,
   MagnifyingGlassIcon,
   ChevronUpIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 
 import { usePathname } from "next/navigation";
@@ -37,12 +38,12 @@ const Header = () => {
         priority
       />
 
-      <ul className="ml-12 flex flex-1 gap-5">
+      <ul className="ml-12 mr-2 hidden min-w-[140px] flex-1 gap-5 md:flex">
         {links.map((link) => (
           <li key={link.id}>
             <Link
               className={clsx(
-                "rounded  transition duration-200 hover:text-[#b3b3b3]",
+                "rounded  text-[1vw] transition duration-200 hover:text-[#b3b3b3]",
                 {
                   "font-bold": pathname === link.path,
                 },
@@ -54,6 +55,11 @@ const Header = () => {
           </li>
         ))}
       </ul>
+
+      <div className="ml-8 flex flex-1 items-center gap-2 md:hidden">
+        <span>Browse</span>
+        <ChevronDownIcon className="w-[2vw]" />
+      </div>
 
       <div className="flex items-center gap-5">
         <MagnifyingGlassIcon className="w-5 cursor-pointer" />
