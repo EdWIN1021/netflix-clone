@@ -28,7 +28,7 @@ const Header = () => {
   const [open, toggle] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 flex items-center bg-black px-[4%] py-4 text-sm">
+    <div className="sticky top-0 z-50 flex items-center bg-black px-[4%] py-4 text-sm text-white">
       <Image
         className="cursor-pointer"
         src="/logo.svg"

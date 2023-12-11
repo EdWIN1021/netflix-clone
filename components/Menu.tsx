@@ -11,7 +11,7 @@ const Menu: React.FC<{ toggle: Dispatch<SetStateAction<boolean>> }> = ({
 
   return (
     <div
-      className="absolute right-0 top-[150%] w-[220px] border border-[rgba(255,255,255,0.15)] bg-[rgba(0,0,0,0.9)] before:absolute before:right-[15%] before:top-[-25px] before:border-b-[8px] before:border-l-[10px] before:border-r-[10px] before:border-b-[rgba(299,299,299)] before:border-l-transparent before:border-r-transparent before:pt-4 before:content-['']"
+      className="absolute right-0 top-[150%] w-[220px] border border-[rgba(255,255,255,0.15)] bg-[rgba(0,0,0,0.9)] text-white before:absolute before:right-[15%] before:top-[-25px] before:border-b-[8px] before:border-l-[10px] before:border-r-[10px] before:border-b-[rgba(299,299,299)] before:border-l-transparent before:border-r-transparent before:pt-4 before:content-['']"
       onMouseOver={() => toggle(true)}
     >
       <ul>
