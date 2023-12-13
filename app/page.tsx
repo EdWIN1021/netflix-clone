@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <main className="bg-[rgb(35,35,35,35)]">
       <BannerSection />
-      {/* <TVSection /> */}
-      {/* <DevicesSection /> */}
-      {/* <KidSection /> */}
-      {/* <AppSection /> */}
+      <TVSection />
+      <DevicesSection />
+      <KidSection />
+      <AppSection />
       <QuestionSection />
 
       <Footer links={homeFooterLinks} variant="dark" dropDown={<DropDown />} />
