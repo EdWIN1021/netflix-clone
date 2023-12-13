@@ -19,7 +19,7 @@ const TVSection = () => {
         <div className="relative mx-auto max-w-2xl">
           <Image
             className="relative z-[100] w-[55vw]"
-            src="/tv.png"
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
             alt=""
             width={100}
             height={100}
@@ -30,7 +30,10 @@ const TVSection = () => {
             muted
             loop
           >
-            <source src="/video-tv.m4v" type="video/webm" />
+            <source
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+              type="video/webm"
+            />
           </video>
         </div>
       </div>
