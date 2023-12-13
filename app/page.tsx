@@ -11,12 +11,12 @@ import DropDown from "@/components/DropDown";
 export default function Home() {
   return (
     <main className="bg-[rgb(35,35,35,35)]">
-      <BannerSection />
+      {/* <BannerSection />
       <TVSection />
       <DevicesSection />
       <KidSection />
       <AppSection />
-      <QuestionSection />
+      <QuestionSection /> */}
 
       <Footer links={homeFooterLinks} variant="dark" dropDown={<DropDown />} />
     </main>
