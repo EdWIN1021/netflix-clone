@@ -13,9 +13,9 @@ export default function Home() {
     <main className="bg-[rgb(35,35,35,35)]">
       <BannerSection />
       {/* <TVSection /> */}
-      <DevicesSection />
-      <KidSection />
-      <AppSection />
+      {/* <DevicesSection /> */}
+      {/* <KidSection /> */}
+      {/* <AppSection /> */}
       <QuestionSection />
 
       <Footer links={homeFooterLinks} variant="dark" dropDown={<DropDown />} />
