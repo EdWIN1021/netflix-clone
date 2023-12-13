@@ -9,7 +9,7 @@ const DevicesSection = () => {
         <div className="relative mx-auto w-[45vw]">
           <Image
             className="relative z-[10] w-full"
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
+            src="/devices.png"
             alt=""
             width={500}
             height={500}
@@ -20,10 +20,7 @@ const DevicesSection = () => {
             muted
             loop
           >
-            <source
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-              type="video/webm"
-            />
+            <source src="/video-devices.m4v" type="video/webm" />
           </video>
         </div>
 

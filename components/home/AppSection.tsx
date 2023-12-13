@@ -18,7 +18,7 @@ const APPSection = () => {
         <div className="relative mx-auto max-w-xl">
           <Image
             className="w-[60vw]"
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+            src="/mobile.jpg"
             alt="phone"
             width={500}
             height={500}

@@ -19,7 +19,7 @@ const TVSection = () => {
         <div className="relative mx-auto max-w-2xl">
           <Image
             className="relative z-[100] w-[55vw]"
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+            src="/tv.png"
             alt=""
             width={100}
             height={100}
