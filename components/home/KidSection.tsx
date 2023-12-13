@@ -8,7 +8,7 @@ const KidSection = () => {
       <div className="mx-auto flex max-w-[1250px] flex-col text-center md:flex-row-reverse md:items-center md:text-left">
         <Image
           className="self-center md:w-[40%]"
-          src="/kids/png"
+          src="/kids.png"
           alt=""
           width={500}
           height={500}

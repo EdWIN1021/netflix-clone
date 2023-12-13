@@ -27,7 +27,7 @@ const APPSection = () => {
           <div className="absolute left-[50%] top-[80%] flex h-[22%] w-[55%] translate-x-[-50%] translate-y-[-50%]  items-center rounded-xl  border-2 border-solid border-[rgb(128,128,128)] bg-black p-2 shadow-[0_0_2rem_0_rgb(0,0,0)]">
             <Image
               className="mr-4 w-[3.5vw]"
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
+              src="/boxshot.png"
               alt=""
               width={500}
               height={500}
@@ -42,7 +42,7 @@ const APPSection = () => {
 
             <Image
               className="h-full w-[5vw]"
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
+              src="/download.gif"
               alt=""
               width={500}
               height={500}
