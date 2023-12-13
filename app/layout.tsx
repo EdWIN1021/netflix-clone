@@ -12,7 +12,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Netflix",
+  title: "netflix clone",
   description: "netflix clone",
 };
 
