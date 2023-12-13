@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <AuthProvider>
+        {/* <AuthProvider>
           <QueryProvider>{children}</QueryProvider>
-        </AuthProvider>
+        </AuthProvider> */}
+        {children}
       </body>
     </html>
   );
