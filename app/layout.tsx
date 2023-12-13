@@ -10,11 +10,6 @@ const nunito = Nunito({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "netflix clone",
-  description: "netflix clone",
-};
-
 export default function RootLayout({
   children,
 }: {
