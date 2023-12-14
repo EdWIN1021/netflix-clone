@@ -9,19 +9,49 @@ import {
 } from "@heroicons/react/24/outline";
 import { IoMdPlay } from "react-icons/io";
 import { Movie } from "@/app/types";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import Skeleton from "react-loading-skeleton";
 
-const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
+const MovieCard = ({
+  parentRef,
+  movie,
+  type,
+}: {
+  parentRef: React.RefObject<HTMLDivElement>;
+  movie: Movie;
+  type: string;
+}) => {
   const [leftPosition, setLeftPosition] = useState<number>();
-  const { data, isLoading, refetch } = useMovieOrSeries(movie?.id, type);
+  const { data, isLoading } = useMovieOrSeries(movie?.id, type);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseOver = (e: MouseEvent<HTMLElement>) => {
-    refetch();
-    setLeftPosition(e.currentTarget.getBoundingClientRect().left);
-  };
+  useEffect(() => {
+    const updateLeftPosition = () => {
+      if (cardRef) {
+        setLeftPosition(cardRef.current?.getBoundingClientRect().left);
+      }
+    };
+
+    updateLeftPosition();
+
+    const handleScroll = () => {
+      updateLeftPosition();
+    };
+
+    const cardElement = parentRef.current;
+
+    if (cardElement) {
+      cardElement.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (cardElement) {
+        cardElement.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [parentRef]);
 
   return (
     <div className="group min-w-[15.5%] cursor-pointer rounded">
@@ -29,12 +59,11 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
         {isLoading ? (
           <Skeleton style={{ height: "8.2vw" }} baseColor="#b3b3b3" />
         ) : (
-          <>
+          <div ref={cardRef}>
             <Image
               className="w-full"
               src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
               alt=""
-              onMouseOver={handleMouseOver}
               width={150}
               height={10}
             />
@@ -47,12 +76,12 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
                 alt=""
               />
             )}
-          </>
+          </div>
         )}
       </div>
 
       <div
-        className="z-50 hidden shadow-2xl group-hover:absolute group-hover:inline-block group-hover:w-[15%] group-hover:animate-scale_card"
+        className="hidden shadow-2xl group-hover:absolute group-hover:z-50 group-hover:inline-block group-hover:w-[15%] group-hover:animate-scale_card"
         style={{ left: leftPosition }}
       >
         <Image

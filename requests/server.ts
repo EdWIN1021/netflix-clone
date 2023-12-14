@@ -4,7 +4,6 @@ export const getTrending = async () => {
   const res = await fetch(
     `${process.env.API_BASE_URL}/trending/all/week?api_key=${process.env.THEMOVIEBD_API_KEY}&language=en-US`,
   );
-  console.log(process.env.API_BASE_URL);
   const data = await res?.json();
   if (res?.ok) {
     return data;

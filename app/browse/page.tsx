@@ -36,7 +36,7 @@ const page = async () => {
     <div>
       <Banner />
 
-      <div className="pl-[4%]">
+      <div>
         <Row title={"Trending Now"} movies={trending?.results} type="movie" />
         <Row
           title={"Upcoming Movies"}

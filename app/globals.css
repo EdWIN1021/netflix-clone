@@ -21,9 +21,9 @@ span {
   white-space: nowrap;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 @layer components {
   .primary-btn {
