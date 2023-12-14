@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from "react";
 import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
+import { supabase } from "../lib/supabase";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  //   const { signUp } = useContext(AuthContext);
-
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    // signUp(email, password);
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      toast.error(error?.message, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (data) {
+      navigate("/browse");
+    }
   };
 
   useEffect(() => {
