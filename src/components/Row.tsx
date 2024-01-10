@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import { Movie } from "../types";
@@ -28,7 +27,7 @@ const Row = ({
 
         <div
           className="flex gap-2"
-          // style={{ transform: `translateX(-${left}vw)` }}
+          style={{ transform: `translateX(-${left}vw)` }}
         >
           {!loading && (
             <>
