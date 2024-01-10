@@ -3,7 +3,7 @@ import { PiWarningCircle } from "react-icons/pi";
 
 import { useMemo } from "react";
 import useFetch from "../hooks/useFetch";
-import useVideos from "../hooks/useVideos";
+// import useVideos from "../hooks/useVideos";
 import Skeleton from "react-loading-skeleton";
 import IconButton from "../ui/IconButton";
 
@@ -17,7 +17,7 @@ const Banner = () => {
     [movies]
   );
 
-  const { data: videos } = useVideos(movie?.id);
+  // const { data: videos } = useVideos(movie?.id);
 
   return (
     <section className="relative h-[40vw]">
@@ -25,10 +25,10 @@ const Banner = () => {
         <Skeleton className="h-full w-full" baseColor="#b3b3b3" />
       ) : (
         <>
-          <iframe
+          {/* <iframe
             className="absolute z-10 h-full w-full"
             src={`https://www.youtube.com/embed/${videos[0]?.key}?autoplay=1&mute=1&loop=1&controls=0&cc_load_policy=0&rel=0`}
-          ></iframe>
+          ></iframe> */}
 
           <img
             className="absolute z-30 h-full w-full animate-fade"
