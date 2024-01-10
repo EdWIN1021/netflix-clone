@@ -2,7 +2,7 @@ import AppSection from "../components/AppSection";
 import BannerSection from "../components/BannerSection";
 import DevicesSection from "../components/DevicesSection";
 import Footer from "../components/Footer";
-import KidSection from "../components/KidSection";
+// import KidSection from "../components/KidSection";
 import QuestionSection from "../components/QuestionSection";
 import TVSection from "../components/TVSection";
 import { homeFooterLinks } from "../constants";
@@ -14,7 +14,7 @@ const Home = () => {
       <BannerSection />
       <TVSection />
       <DevicesSection />
-      <KidSection />
+      {/* <KidSection /> */}
       <AppSection />
       <QuestionSection />
       <Footer
