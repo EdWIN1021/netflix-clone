@@ -22,7 +22,7 @@ body,
 
 img,
 input {
-  display: block;
+  /* display: block; */
 }
 
 li {
@@ -37,5 +37,5 @@ a:focus {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
