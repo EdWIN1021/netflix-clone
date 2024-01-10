@@ -7,7 +7,7 @@ import Root from "./pages/Root";
 import SignIn from "./pages/SignIn";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
-// import Browse from "./pages/Browse";
+import Browse from "./pages/Browse";
 import { ToastContainer } from "react-toastify";
 import React from "react";
 import AuthProvider from "./contexts/AuthContext";
@@ -29,10 +29,10 @@ const router = createHashRouter([
         path: "signup",
         element: <SignUp />,
       },
-      // {
-      //   path: "browse",
-      //   element: <Browse />,
-      // },
+      {
+        path: "browse",
+        element: <Browse />,
+      },
     ],
   },
 ]);
