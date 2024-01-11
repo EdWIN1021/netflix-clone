@@ -15,11 +15,7 @@ const TVSection = () => {
         </div>
 
         <div className="relative mx-auto max-w-2xl">
-          <img
-            className="relative w-[55vw]"
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-            alt=""
-          />
+          <img className="relative w-[55vw]" src="" alt="" />
           <video
             className="absolute left-[13%] top-[21%] w-[73%]"
             autoPlay
