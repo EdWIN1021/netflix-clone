@@ -16,7 +16,7 @@ const APPSection = () => {
         <div className="relative mx-auto max-w-xl">
           <img
             className="w-[60vw]"
-            src=""
+            src="https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Fmobile.jpg?alt=media&token=a13f24b4-3fba-4580-bbb1-762880655c73"
             alt="phone"
             width={500}
             height={500}
