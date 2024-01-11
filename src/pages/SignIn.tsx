@@ -10,7 +10,7 @@ const SignIn = () => {
     <div
       className="h-screen min-h-[1150px] bg-cover"
       style={{
-        backgroundImage: `url('/bg.jpg')`,
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Fbg.jpg?alt=media&token=46a447ab-8768-403f-9198-b07a7b03058c)`,
       }}
     >
       <Overlay>
@@ -18,7 +18,7 @@ const SignIn = () => {
           <Link className="bg-black p-5 sm:bg-transparent" to={"/"}>
             <img
               className="h-full w-[9.25rem] flex-1"
-              src="/logo.svg"
+              src="https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Flogo.svg?alt=media&token=8ad35c75-d4a9-40dc-b5d0-f68a83c812a2"
               alt="logo"
             />
           </Link>
