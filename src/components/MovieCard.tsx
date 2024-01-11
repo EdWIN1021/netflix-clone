@@ -12,17 +12,17 @@ const MovieCard = ({ movie, type }: { movie: Movie; type: string }) => {
   const { data, loading } = useMovieOrSeries(movie?.id, type);
 
   return (
-    <div className="rounded min-w-[15vw] group">
+    <div className="rounded min-w-[15vw]">
       {loading ? (
         <Skeleton style={{ height: "8.2vw" }} baseColor="#b3b3b3" />
       ) : (
-        <div className="group-hover:w-[20vw] group-hover:absolute group-hover:z-10 group-hover:-translate-y-[10%]">
+        <div onMouseOver={() => console.log("asd")}>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
             alt=""
           />
 
-          <div className="shadow-2xl hidden group-hover:block">
+          <div className="shadow-2xl hidden">
             <div className="rounded-b bg-[rgb(20,20,20)] p-3">
               <div className="mb-6 flex">
                 <div className="flex flex-1 gap-[.3vw]">

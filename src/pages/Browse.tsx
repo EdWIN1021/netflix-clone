@@ -5,7 +5,7 @@ import Row from "../components/Row";
 
 const Browse = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black overflow-y-visible">
       <Header />
       <Banner />
       <div className="pl-[4%]">
