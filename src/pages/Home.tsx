@@ -1,6 +1,7 @@
 import BannerSection from "../components/BannerSection";
 import Footer from "../components/Footer";
 import QuestionSection from "../components/QuestionSection";
+import TVSection from "../components/TVSection";
 import { homeFooterLinks } from "../constants";
 import DropDown from "../ui/DropDown";
 
@@ -8,7 +9,7 @@ const Home = () => {
   return (
     <main className="bg-[rgb(35,35,35,35)]">
       <BannerSection />
-      {/* <TVSection /> */}
+      <TVSection />
       {/* <DevicesSection />
       <KidSection />
       <AppSection /> */}
