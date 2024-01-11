@@ -11,7 +11,7 @@ const BannerSection = () => {
     <section
       className="w-full bg-cover"
       style={{
-        backgroundImage: `url('/bg.jpg')`,
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Fbg.jpg?alt=media&token=46a447ab-8768-403f-9198-b07a7b03058c)`,
       }}
     >
       <Overlay>
@@ -20,7 +20,11 @@ const BannerSection = () => {
             className="h-[1.5rem] flex-1 self-center sm:h-[2.5rem]"
             to={"/"}
           >
-            <img className="h-full w-[9.25rem] flex-1" src="/logo.svg" alt="" />
+            <img
+              className="h-full w-[9.25rem] flex-1"
+              src="https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Flogo.svg?alt=media&token=8ad35c75-d4a9-40dc-b5d0-f68a83c812a2"
+              alt=""
+            />
           </Link>
 
           <DropDown variant="transparent" />

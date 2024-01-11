@@ -15,14 +15,21 @@ const TVSection = () => {
         </div>
 
         <div className="relative mx-auto max-w-2xl">
-          <img className="relative w-[55vw]" src="" alt="" />
+          <img
+            className="relative w-[55vw]"
+            src="https://firebasestorage.googleapis.com/v0/b/images-39219.appspot.com/o/images%2Fnetflix-clone%2Ftv.png?alt=media&token=5bea821e-67f3-4886-ada1-c41a5d750398"
+            alt=""
+          />
           <video
             className="absolute left-[13%] top-[21%] w-[73%]"
             autoPlay
             muted
             loop
           >
-            <source src="" type="video/webm" />
+            <source
+              src="https://firebasestorage.googleapis.com/v0/b/videos-8ca9d.appspot.com/o/netflix-clone%2Fvideo-tv.m4v?alt=media&token=ebfbb6dc-7649-4473-9ba7-9f12c44873f9"
+              type="video/webm"
+            />
           </video>
         </div>
       </div>
