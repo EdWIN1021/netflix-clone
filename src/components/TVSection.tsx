@@ -26,10 +26,7 @@ const TVSection = () => {
             muted
             loop
           >
-            <source
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
-              type="video/webm"
-            />
+            <source src="" type="video/webm" />
           </video>
         </div>
       </div>
