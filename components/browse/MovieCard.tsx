@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { IoMdPlay } from "react-icons/io";
 import { Movie } from "@/app/types";
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import Skeleton from "react-loading-skeleton";
@@ -51,14 +51,15 @@ const MovieCard = ({
         cardElement.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [parentRef]);
+  }, [parentRef, cardRef]);
 
   return (
-    <div className="group min-w-[15.5%] cursor-pointer rounded">
+    <div className="group min-w-[16.2%] cursor-pointer rounded">
       <div className="relative rounded group-hover:opacity-0">
         {isLoading ? (
-          <Skeleton style={{ height: "8.2vw" }} baseColor="#b3b3b3" />
+          <div>asd</div>
         ) : (
+          // <Skeleton style={{ height: "8.2vw" }} baseColor="#b3b3b3" />
           <div ref={cardRef}>
             <Image
               className="w-full"

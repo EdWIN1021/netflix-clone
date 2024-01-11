@@ -17,39 +17,17 @@ const Row = ({
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft -= 200;
+      scrollContainerRef.current.scrollLeft +=
+        scrollContainerRef.current.clientWidth;
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft += 200;
+      scrollContainerRef.current.scrollLeft -=
+        scrollContainerRef.current.clientWidth - 100;
     }
   };
-
-  // useEffect(() => {
-  //   const updateLeftPosition = () => {
-  //     console.log("here");
-  //   };
-
-  //   updateLeftPosition();
-
-  //   const handleScroll = () => {
-  //     updateLeftPosition();
-  //   };
-
-  //   const cardElement = scrollContainerRef.current;
-
-  //   if (cardElement) {
-  //     cardElement.addEventListener("scroll", handleScroll);
-  //   }
-
-  //   return () => {
-  //     if (cardElement) {
-  //       cardElement.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-  // }, []);
 
   return (
     <div className="my-[3vw] text-[1.4vw] leading-[1.25vw] text-white">
@@ -64,7 +42,7 @@ const Row = ({
         </div>
 
         <div
-          className="ml-[4%] flex flex-row gap-2 overflow-x-scroll"
+          className="mx-[5%] flex flex-row gap-2 overflow-x-scroll"
           ref={scrollContainerRef}
         >
           {movies && (
@@ -81,7 +59,10 @@ const Row = ({
           )}
         </div>
 
-        <div className="absolute right-0 z-20 h-full w-[3vw] bg-[red]">
+        <div
+          className="absolute right-0 z-20 h-full w-[3vw] bg-[red]"
+          onClick={scrollLeft}
+        >
           <FaChevronRight />
         </div>
       </div>
